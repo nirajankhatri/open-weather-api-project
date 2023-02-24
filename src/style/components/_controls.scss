@@ -1,0 +1,22 @@
+.controls {
+    padding-top: 2em;
+
+    .form {
+
+        display: flex;
+        justify-content: center;
+        input {
+            padding: 5px 10px;
+        }
+
+        .form__submit {
+            background-color: rgb(48, 38, 71);
+            border: none;
+            padding: 5px 15px;
+            font-weight: 500;
+            font-size: 1.125rem;
+            color: whitesmoke;
+        }
+
+    }
+}

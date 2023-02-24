@@ -1,0 +1,14 @@
+.errorDialogContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.errorDialog {
+    padding: 5px 20px;
+    border: solid red 1px;
+    border-radius: 5px;
+    margin-top: 10%;
+    width: fit-content;
+    font-size: 1.125rem;
+    font-weight: 500;
+}

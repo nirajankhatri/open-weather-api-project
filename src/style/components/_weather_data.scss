@@ -1,0 +1,27 @@
+.weatherData {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    gap: 2em;
+
+    div {
+        display: flex;
+        align-items: baseline;
+        justify-content: start;
+        gap: 2em;
+        width: 100%;
+
+        h1 {
+            font-size: 2vw;
+            font-weight: 500;
+            color: rgb(67, 53, 73);
+            width: 50%;
+            text-align: start;
+        }
+
+        p {
+            font-size: 1.125rem;
+            font-weight: 500;
+        }
+    }
+}
