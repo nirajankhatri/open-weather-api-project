@@ -1,27 +1,40 @@
 .weatherData {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  padding: 1em;
+  justify-content: center;
+
+  //   h1 {
+  //     font-size: 2vw;
+  //     font-weight: 500;
+  //     color: rgb(67, 53, 73);
+  //     width: 50%;
+  //     text-align: start;
+  //   }
+
+  //   p {
+  //     font-size: 1.125rem;
+  //     font-weight: 500;
+  //   }
+
+  .weatherData__table {
+    // border: solid 1px black;
+    text-align: start;
+    width: fit-content;
     padding: 1em;
-    gap: 2em;
 
-    div {
-        display: flex;
-        align-items: baseline;
-        justify-content: start;
-        gap: 2em;
-        width: 100%;
-
-        h1 {
-            font-size: 2vw;
-            font-weight: 500;
-            color: rgb(67, 53, 73);
-            width: 50%;
-            text-align: start;
-        }
-
-        p {
-            font-size: 1.125rem;
-            font-weight: 500;
-        }
+    .weatherData__table__row__label {
+      font-size: 2rem;
+      font-weight: 500;
+      width: 50%;
+      text-align: start;
+      padding-right: 3vw;
+      padding-bottom: 1rem;
     }
+
+    .weatherData__table__row__info {
+      font-size: 1.125rem;
+      font-weight: 500;
+      color: rgb(67, 53, 73);
+    }
+  }
 }
