@@ -4,6 +4,7 @@ import axios from "axios";
 
 const Modal = () => {
   const [city, setCity] = useState("kathmandu");
+  const [input, setInput] = useState("kathmandu");
   const [weatherData, setWeatherData] = useState(null);
 
   const formSubmitHandler = (e) => {
@@ -15,7 +16,7 @@ const Modal = () => {
   useEffect(() => {
     async function fetchData() {
       const apiKey = "1ed8adbf90879330a8509d4a9be3d222";
-      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
       await axios.get(url).then(function (response) {
         // handle success
         console.log(response);
@@ -25,6 +26,22 @@ const Modal = () => {
     }
     fetchData();
   }, [city]);
+
+  const onChangeHandler = (e) => {
+    setInput(e.target.value);
+  };
+
+  const results =
+    weatherData != null ? (
+      <div>
+        <p>City Name: {weatherData.name}</p>
+        <p>Temperature: {weatherData.main.temp}</p>
+        <p>Humidity: {weatherData.main.humidity}</p>
+        <p>Weather: {weatherData.weather[0].description}</p>
+      </div>
+    ) : (
+      <p>Please enter a city name</p>
+    );
 
   return (
     <div className="modal">
@@ -36,14 +53,12 @@ const Modal = () => {
           type="text"
           className="modal__from__input"
           id="modal__from__input"
+          value={input}
+          onChange={(e) => onChangeHandler(e)}
         />
         <input type="submit" className="modal__form__submit" value="Search" />
       </form>
-      <div className="modal__result">
-        <p>
-          {weatherData.name ? weatherData.name : null}
-        </p>
-      </div>
+      <div className="modal__result">{results}</div>
     </div>
   );
 };
